@@ -1,6 +1,37 @@
 [gd_scene format=3 uid="uid://h1j2ud0cwqfl"]
 
-[ext_resource type="Script" uid="uid://013yp1j8kydb" path="res://components/health_component.gd" id="1_t2tvt"]
+[sub_resource type="GDScript" id="GDScript_tk8d1"]
+resource_name = "health_component"
+script/source = "class_name HealthComponent extends Node2D
+
+signal death
+
+@export var progress_bar : ProgressBar
+@export var current_health := 100
+@export var max_health := 100
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	update_health_bar()
+	
+func update_health_bar():
+	if progress_bar:
+		progress_bar.value = current_health
+		
+func receive_damage(amount: int):
+	current_health = clamp(current_health - amount, 0, max_health)
+	update_health_bar()
+	
+	if current_health <= 0:
+		on_death()
+		
+func apply_health(amount: int):
+	current_health = clamp(current_health + amount, 0 , max_health)
+	update_health_bar()
+
+func on_death():
+	death.emit()
+"
 
 [node name="HealthComponent" type="Node2D" unique_id=1994316890]
-script = ExtResource("1_t2tvt")
+script = SubResource("GDScript_tk8d1")

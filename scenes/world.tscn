@@ -189,6 +189,5 @@ tile_set = SubResource("TileSet_71j4m")
 position = Vector2(540, 325)
 
 [node name="CanvasLayer" parent="." unique_id=946806891 instance=ExtResource("2_rwgxs")]
-visible = false
 
 [node name="TimerSpawnEnemy" type="Timer" parent="." unique_id=1706672009]

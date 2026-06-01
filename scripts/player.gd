@@ -3,7 +3,7 @@ class_name Player extends CharacterBody2D
 signal attack_finished
 
 @onready var sprite_animation: AnimatedSprite2D = $AnimatedSprite2D
-@onready var health_component: Node2D = $components/health_component
+@onready var health_component: Node2D = $"HealthComponent"
 
 var move_speed := 100
 var attack_damage := 50
