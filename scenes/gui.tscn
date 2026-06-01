@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cyq8ap00l4eyy"]
+
+[ext_resource type="Script" uid="uid://bg6pjh5u24b7f" path="res://scripts/gui.gd" id="1_b8iy7"]
+[ext_resource type="Texture2D" uid="uid://t1w2pultj6dj" path="res://art/medieval logo.png" id="1_ynd5l"]
+[ext_resource type="Texture2D" uid="uid://d2c2h1te46i6d" path="res://art/gameOver.png" id="2_b8iy7"]
+[ext_resource type="FontFile" uid="uid://bebuhpgd8o6xx" path="res://art/Medieval Scroll of Wisdom.ttf" id="3_jqlde"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=946806891]
+script = ExtResource("1_b8iy7")
+
+[node name="MedievalLogo" type="Sprite2D" parent="." unique_id=618977024]
+position = Vector2(651, 462)
+scale = Vector2(0.3828908, 0.41888824)
+texture = ExtResource("1_ynd5l")
+
+[node name="GameOver" type="Sprite2D" parent="." unique_id=1486181260]
+position = Vector2(638, 446.0001)
+scale = Vector2(0.5010288, 0.50102884)
+texture = ExtResource("2_b8iy7")
+
+[node name="LabelScore" type="Label" parent="." unique_id=1305232005]
+offset_top = 56.0
+offset_right = 1272.0
+offset_bottom = 248.0
+theme_override_colors/font_outline_color = Color(2.163733, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_jqlde")
+theme_override_font_sizes/font_size = 64
+text = "0"
+horizontal_alignment = 1
